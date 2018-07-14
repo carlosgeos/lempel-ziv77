@@ -8,7 +8,7 @@ class App extends Component {
         super(props);
         this.state = {input_str: '',
                       window_size: 6,
-                      buffer_size: 3,
+                      buffer_size: 5,
                       dict: []};
 
         // This binding is necessary to make `this` work in the callback
@@ -18,18 +18,18 @@ class App extends Component {
     prefix_exists(search_window, buffer) {
         // helper method to determine if a prefix exists in the search
         // window
-        for (var j = 0; j < buffer.length - 1; j++) {
-            let to_match = buffer.substring(0, buffer.length - 1 - j);
-            console.log("To match: " , to_match);
+        for (var j = 0; j < buffer.length; j++) {
+            let to_match = buffer.substring(0, buffer.length - j);
             if (search_window.includes(to_match)) {
                 let offset = search_window.length - search_window.lastIndexOf(to_match);
                 let distance = to_match.length;
                 if (offset == distance) { // maybe extends into lookahead buffer
-                    let rest_of_buffer = buffer.replace(to_match, "");
-                    for (var k = 0; k < rest_of_buffer.length; k++) {
-                        if (rest_of_buffer.charAt(k) == to_match.charAt(k)) {
-                            distance++;
-                        }
+                    let rest_of_buffer = buffer.substring(buffer.length - j, buffer.length);
+                    let k = 0;
+                    while((rest_of_buffer.charAt(k) == to_match.charAt(k)) &&
+                          k < rest_of_buffer.length) {
+                        distance++;
+                        k++;
                     }
                 }
                 return [offset, distance];
@@ -40,20 +40,19 @@ class App extends Component {
 
     lz() {
         // lz77 algorithm
-        let input_str = this.state.input_str;
-        let w = this.state.window_size;
-        let b = this.state.buffer_size;
+        const input_str = this.state.input_str;
+        const w = parseInt(this.state.window_size);
+        const b = parseInt(this.state.buffer_size);
 
         let i = 0;
         while (i < input_str.length) {
-            let search_window = input_str.substring(i - w, i);
-            let buffer = input_str.substring(i, i + b);
-
+            const search_window = input_str.substring(i - w, i);
+            const buffer = input_str.substring(i, i + b);
             let offset = 0;
             let distance = 0;
             let next_char = buffer.charAt(0);
 
-            let prefix_info = this.prefix_exists(search_window, buffer);
+            const prefix_info = this.prefix_exists(search_window, buffer);
 
 
             if (prefix_info) {
@@ -116,7 +115,7 @@ function LZinput(props) {
 }
 
 function LZtable_row(props) {
-    return <p>{props.row_info.window}|{props.row_info.buffer}, {props.row_info.distance}, {props.row_info.offset}, {props.row_info.next_char}</p>;
+    return <p>{props.row_info.window}|{props.row_info.buffer}, {props.row_info.offset}, {props.row_info.distance}, {props.row_info.next_char}</p>;
 }
 
 function LZtable(props) {
