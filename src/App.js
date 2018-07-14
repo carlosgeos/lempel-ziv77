@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {input_str: '',
-                      window_size: 1,
-                      buffer_size: 1,
+                      window_size: 6,
+                      buffer_size: 3,
                       dict: []};
 
         // This binding is necessary to make `this` work in the callback
@@ -34,21 +35,19 @@ class App extends Component {
                 return [offset, distance];
             }
         }
-        console.log(":( - No prefix found");
         return false;
     }
 
     lz() {
         // lz77 algorithm
         let input_str = this.state.input_str;
+        let w = this.state.window_size;
+        let b = this.state.buffer_size;
+
         let i = 0;
-        let w = 6;
-        let b = 4;
         while (i < input_str.length) {
-            console.log("\n----------------");
             let search_window = input_str.substring(i - w, i);
             let buffer = input_str.substring(i, i + b);
-            console.log(search_window + "|" + buffer);
 
             let offset = 0;
             let distance = 0;
@@ -65,15 +64,28 @@ class App extends Component {
             } else {
                 i++;
             }
-            console.log("<" + offset + ", " + distance + ", " + next_char + ">");
+            // add the table row info to state
+            this.setState((prevstate) => {
+                // updater function to read up-to-date state
+                return {dict: [...prevstate.dict, {
+                    "window": search_window,
+                    "buffer": buffer,
+                    "offset": offset,
+                    "distance": distance,
+                    "next_char": next_char
+                }]};
+            });
         }
     }
 
     handleChange(event) {
-        this.setState({input_str: event.target.value},
-                     this.lz); // llamar a lz() aqui syncro y todo eso
-        console.log("input changed to:");
-        console.log(event.target.value);
+        // generalized change handler using 'computer property names'
+        // - ES2015 only
+        this.setState({[event.target.name]: event.target.value,
+                       dict: []}, // clean dict
+                      this.lz); // lz is calledback when setState
+        // finishes, we are sure to get the
+        // correct input fields
     }
 
     render() {
@@ -86,8 +98,8 @@ class App extends Component {
               <p className="App-intro">
                 To get started, edit <code>src/App.js</code> and save to reload.
               </p>
-              <LZinput handleChange={this.handleChange}/>
-              <LZtable numbers={this.state.dict}/>
+              <LZinput window_size={this.state.window_size} buffer_size={this.state.buffer_size} handleChange={this.handleChange}/>
+              <LZtable dict_info={this.state.dict}/>
             </div>
         );
     }
@@ -96,24 +108,24 @@ class App extends Component {
 function LZinput(props) {
     return (
         <div>
-          <input type="number" name="window_size" onChange={props.handleChange}></input>
-          <input type="number" name="buffer_size" onChange={props.handleChange}></input>
+          <input type="number" name="window_size" value={props.window_size} onChange={props.handleChange}></input>
+          <input type="number" name="buffer_size" value={props.buffer_size} onChange={props.handleChange}></input>
           <input type="text" name="input_str" onChange={props.handleChange}></input>
         </div>
     );
 }
 
 function LZtable_row(props) {
-    return <p>{props.row_info.length}, {props.row_info.offset}, {props.row_info.next_char}</p>;
+    return <p>{props.row_info.window}|{props.row_info.buffer}, {props.row_info.distance}, {props.row_info.offset}, {props.row_info.next_char}</p>;
 }
 
 function LZtable(props) {
-    const numbers = props.numbers;
-    const rendered_numbers = numbers.map((number) =>
-                                         <LZtable_row row_info={1} />
-                                        );
+    const dict_info = props.dict_info;
+    const rows = dict_info.map((row_info, index) =>
+                               <LZtable_row key={index} row_info={row_info} />
+                              );
     return (
-        <p>{rendered_numbers}</p>
+        <div>{rows}</div>
     );
 }
 
