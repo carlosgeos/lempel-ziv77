@@ -107,9 +107,10 @@ class App extends Component {
 function LZinput(props) {
     return (
         <div>
-          <input type="number" name="window_size" value={props.window_size} onChange={props.handleChange}></input>
+          <input class="eso" type="number" name="window_size" value={props.window_size} onChange={props.handleChange}></input>
           <input type="number" name="buffer_size" value={props.buffer_size} onChange={props.handleChange}></input>
-          <input type="text" name="input_str" onChange={props.handleChange}></input>
+          <input type="text" name="input_str" placeholder="Input string" onChange={props.handleChange}></input>
+          <p class="eso">Hola</p>
         </div>
     );
 }
