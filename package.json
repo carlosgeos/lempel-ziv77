@@ -3,15 +3,14 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
+        "@material-ui/core": "^1.4.0",
         "node-sass-chokidar": "^1.3.0",
         "react": "^16.4.1",
         "react-dom": "^16.4.1",
-        "react-scripts": "1.1.4"
+        "react-scripts": "1.1.4",
+        "typeface-roboto": "0.0.54"
     },
     "scripts": {
-        // src/App.scss has to be specified explicitly cause otherwise
-        // node-sass-chokidar has problems when trying to find the
-        // lockfile .#App.scss created by Emacs.
         "build-css": "node-sass-chokidar src/App.scss -o src/",
         "watch-css": "npm run build-css && node-sass-chokidar src/App.scss -o src/ --watch --recursive",
         "start": "react-scripts start",

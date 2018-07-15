@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import TextField from '@material-ui/core/TextField';
+import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
 import logo from './logo.svg';
+import 'typeface-roboto';
 import './App.css';
 
 
@@ -89,10 +94,11 @@ class App extends Component {
 
     render() {
         return (
-            <div className="App">
+            <div style={{maxWidth: 1200, padding: 50}} className="App">
+              <CssBaseline />
               <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
-                <h1 className="App-title">Welcome to React</h1>
+                <Typography variant="display1">LZ77 compression algorithm</Typography>
               </header>
               <p className="App-intro">
                 To get started, edit <code>src/App.js</code> and save to reload.
@@ -106,12 +112,17 @@ class App extends Component {
 
 function LZinput(props) {
     return (
-        <div>
-          <input class="eso" type="number" name="window_size" value={props.window_size} onChange={props.handleChange}></input>
-          <input type="number" name="buffer_size" value={props.buffer_size} onChange={props.handleChange}></input>
-          <input type="text" name="input_str" placeholder="Input string" onChange={props.handleChange}></input>
-          <p class="eso">Hola</p>
-        </div>
+        <Grid container spacing={24}>
+          <Grid item xs={6} md={2}>
+            <TextField InputLabelProps={{shrink: true,}}type="text" name="window_size" label="Window size" value={props.window_size} onChange={props.handleChange} fullWidth />
+          </Grid>
+          <Grid item xs={6} md={2}>
+            <TextField InputLabelProps={{shrink: true,}} type="text" name="buffer_size" label="Buffer size" value={props.buffer_size} onChange={props.handleChange} fullWidth />
+          </Grid>
+          <Grid item xs={12} md={8}>
+            <TextField type="text" name="input_str" label="Input string" onChange={props.handleChange} fullWidth />
+          </Grid>
+        </Grid>
     );
 }
 
