@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
+import LZtable from './LZtable';
+import LZinput from './LZinput';
 import logo from './logo.svg';
 import 'typeface-roboto';
 import './App.css';
@@ -13,7 +13,7 @@ class App extends Component {
         super(props);
         this.state = {input_str: '',
                       window_size: 6,
-                      buffer_size: 5,
+                      buffer_size: 4,
                       dict: []};
 
         // This binding is necessary to make `this` work in the callback
@@ -28,10 +28,10 @@ class App extends Component {
             if (search_window.includes(to_match)) {
                 let offset = search_window.length - search_window.lastIndexOf(to_match);
                 let distance = to_match.length;
-                if (offset == distance) { // maybe extends into lookahead buffer
+                if (offset === distance) { // maybe extends into lookahead buffer
                     let rest_of_buffer = buffer.substring(buffer.length - j, buffer.length);
                     let k = 0;
-                    while((rest_of_buffer.charAt(k) == to_match.charAt(k)) &&
+                    while((rest_of_buffer.charAt(k) === to_match.charAt(k)) &&
                           k < rest_of_buffer.length) {
                         distance++;
                         k++;
@@ -46,8 +46,8 @@ class App extends Component {
     lz() {
         // lz77 algorithm
         const input_str = this.state.input_str;
-        const w = parseInt(this.state.window_size);
-        const b = parseInt(this.state.buffer_size);
+        const w = parseInt(this.state.window_size, 10);
+        const b = parseInt(this.state.buffer_size, 10);
 
         let i = 0;
         while (i < input_str.length) {
@@ -100,9 +100,7 @@ class App extends Component {
                 <img src={logo} className="App-logo" alt="logo" />
                 <Typography variant="display1">LZ77 compression algorithm</Typography>
               </header>
-              <p className="App-intro">
-                To get started, edit <code>src/App.js</code> and save to reload.
-              </p>
+
               <LZinput window_size={this.state.window_size} buffer_size={this.state.buffer_size} handleChange={this.handleChange}/>
               <LZtable dict_info={this.state.dict}/>
             </div>
@@ -110,34 +108,5 @@ class App extends Component {
     }
 }
 
-function LZinput(props) {
-    return (
-        <Grid container spacing={24}>
-          <Grid item xs={6} md={2}>
-            <TextField InputLabelProps={{shrink: true,}}type="text" name="window_size" label="Window size" value={props.window_size} onChange={props.handleChange} fullWidth />
-          </Grid>
-          <Grid item xs={6} md={2}>
-            <TextField InputLabelProps={{shrink: true,}} type="text" name="buffer_size" label="Buffer size" value={props.buffer_size} onChange={props.handleChange} fullWidth />
-          </Grid>
-          <Grid item xs={12} md={8}>
-            <TextField type="text" name="input_str" label="Input string" onChange={props.handleChange} fullWidth />
-          </Grid>
-        </Grid>
-    );
-}
-
-function LZtable_row(props) {
-    return <p>{props.row_info.window}|{props.row_info.buffer}, {props.row_info.offset}, {props.row_info.distance}, {props.row_info.next_char}</p>;
-}
-
-function LZtable(props) {
-    const dict_info = props.dict_info;
-    const rows = dict_info.map((row_info, index) =>
-                               <LZtable_row key={index} row_info={row_info} />
-                              );
-    return (
-        <div>{rows}</div>
-    );
-}
 
 export default App;
