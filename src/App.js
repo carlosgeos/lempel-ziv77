@@ -3,6 +3,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import LZtable from './LZtable';
 import LZinput from './LZinput';
+import LZlegend from './LZlegend';
 import logo from './logo.svg';
 import 'typeface-roboto';
 import './App.css';
@@ -51,8 +52,10 @@ class App extends Component {
 
         let i = 0;
         while (i < input_str.length) {
+            const head = input_str.substring(0, i - w);
             const search_window = input_str.substring(i - w, i);
             const buffer = input_str.substring(i, i + b);
+            const tail = input_str.substring(i + b);
             let offset = 0;
             let distance = 0;
             let next_char = buffer.charAt(0);
@@ -72,8 +75,10 @@ class App extends Component {
             this.setState((prevstate) => {
                 // updater function to read up-to-date state
                 return {dict: [...prevstate.dict, {
+                    "head": head,
                     "window": search_window,
                     "buffer": buffer,
+                    "tail": tail,
                     "offset": offset,
                     "distance": distance,
                     "next_char": next_char
@@ -102,6 +107,7 @@ class App extends Component {
               </header>
 
               <LZinput window_size={this.state.window_size} buffer_size={this.state.buffer_size} handleChange={this.handleChange}/>
+              <LZlegend/>
               <LZtable dict_info={this.state.dict}/>
             </div>
         );

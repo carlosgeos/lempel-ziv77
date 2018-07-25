@@ -11,20 +11,21 @@ const styles = {
     lztable: {
         marginTop: '60px',
         fontSize: '1.5rem !important',
-        background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-        // borderRadius: 3,
         border: 0,
-        // color: 'white',
-        // height: 48,
         padding: '0 30px',
         boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
     },
+    lztableheading: {
+        background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+        border: 0,
+    },
     table_heading: {
-        fontSize: '1.5rem',
+        fontSize: '1.7rem',
     },
     table_cell: {
-        fontSize: '1.1rem',
-    }
+        fontSize: '1.3rem',
+        fontFamily: 'Roboto Mono, Lucida Console, DejaVu Sans Mono, Monaco, monospace'
+    },
 };
 
 function LZtable(props) {
@@ -39,7 +40,7 @@ function LZtable(props) {
     );
     return (
         <Table className={props.classes.lztable}>
-          <TableHead>
+          <TableHead className={props.classes.lztableheading}>
             <TableRow>
               {table_headings}
             </TableRow>
