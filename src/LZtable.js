@@ -16,14 +16,17 @@ const styles = {
         boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
     },
     lztableheading: {
-      background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-      background: '-webkit-linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-      border: 0,
+        background: 'rgb(254,107,139)',
+        background: '-moz-linear-gradient(90deg, rgba(254,107,139,1) 0%, rgba(255,142,83,1) 100%)',
+        background: '-webkit-linear-gradient(90deg, rgba(254,107,139,1) 0%, rgba(255,142,83,1) 100%)',
+        background: 'linear-gradient(90deg, rgba(254,107,139,1) 0%, rgba(255,142,83,1) 100%)',
+        backgroundAttachment: 'fixed', // safari fix
+        border: 0,
     },
-  table_heading: {
+    lztableheadingcell: {
         fontSize: '1.7rem',
     },
-    table_cell: {
+    lztablecell: {
         fontSize: '1.3rem',
         fontFamily: 'Roboto Mono, Lucida Console, DejaVu Sans Mono, Monaco, monospace'
     },
@@ -33,11 +36,11 @@ function LZtable(props) {
     const dict_info = props.dict_info;
     const table_rows = dict_info.map(
         (row_info, index) =>
-            <LZtableRow className={props.classes.table_cell} key={index} index={index} row_info={row_info} />
+            <LZtableRow className={props.classes.lztablecell} key={index} index={index} row_info={row_info} />
     );
     const table_headings = ["Step", "Window & Buffer", "<Offset, Length, Next Char>"].map(
         (cell, index) =>
-            <TableCell className={props.classes.table_heading} key={index}>{cell}</TableCell>
+            <TableCell className={props.classes.lztableheadingcell} key={index}>{cell}</TableCell>
     );
     return (
         <Table className={props.classes.lztable}>
