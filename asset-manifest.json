@@ -1,17 +1,19 @@
 {
-  "main.css": "/lempel-ziv77/static/css/main.5efb2901.chunk.css",
-  "main.js": "/lempel-ziv77/static/js/main.c87e16e9.chunk.js",
-  "main.js.map": "/lempel-ziv77/static/js/main.c87e16e9.chunk.js.map",
-  "static/css/1.efe86363.chunk.css": "/lempel-ziv77/static/css/1.efe86363.chunk.css",
-  "static/js/1.99b219ee.chunk.js": "/lempel-ziv77/static/js/1.99b219ee.chunk.js",
-  "static/js/1.99b219ee.chunk.js.map": "/lempel-ziv77/static/js/1.99b219ee.chunk.js.map",
-  "runtime~main.js": "/lempel-ziv77/static/js/runtime~main.fed72473.js",
-  "runtime~main.js.map": "/lempel-ziv77/static/js/runtime~main.fed72473.js.map",
-  "static/media/logo.svg": "/lempel-ziv77/static/media/logo.5d5d9eef.svg",
-  "static/media/index.css": "/lempel-ziv77/static/media/roboto-latin-900italic.bc833e72.woff",
-  "static/css/main.5efb2901.chunk.css.map": "/lempel-ziv77/static/css/main.5efb2901.chunk.css.map",
-  "static/css/1.efe86363.chunk.css.map": "/lempel-ziv77/static/css/1.efe86363.chunk.css.map",
-  "index.html": "/lempel-ziv77/index.html",
-  "precache-manifest.861eb9973ac378f7a48769d6c7d7b572.js": "/lempel-ziv77/precache-manifest.861eb9973ac378f7a48769d6c7d7b572.js",
-  "service-worker.js": "/lempel-ziv77/service-worker.js"
+  "files": {
+    "main.css": "/lempel-ziv77/static/css/main.96043103.chunk.css",
+    "main.js": "/lempel-ziv77/static/js/main.b56eb6dd.chunk.js",
+    "main.js.map": "/lempel-ziv77/static/js/main.b56eb6dd.chunk.js.map",
+    "runtime-main.js": "/lempel-ziv77/static/js/runtime-main.6507f5cd.js",
+    "runtime-main.js.map": "/lempel-ziv77/static/js/runtime-main.6507f5cd.js.map",
+    "static/css/2.9acac71f.chunk.css": "/lempel-ziv77/static/css/2.9acac71f.chunk.css",
+    "static/js/2.882cf786.chunk.js": "/lempel-ziv77/static/js/2.882cf786.chunk.js",
+    "static/js/2.882cf786.chunk.js.map": "/lempel-ziv77/static/js/2.882cf786.chunk.js.map",
+    "index.html": "/lempel-ziv77/index.html",
+    "precache-manifest.48e43fe6aa727d15d38b0967c00143fb.js": "/lempel-ziv77/precache-manifest.48e43fe6aa727d15d38b0967c00143fb.js",
+    "service-worker.js": "/lempel-ziv77/service-worker.js",
+    "static/css/2.9acac71f.chunk.css.map": "/lempel-ziv77/static/css/2.9acac71f.chunk.css.map",
+    "static/css/main.96043103.chunk.css.map": "/lempel-ziv77/static/css/main.96043103.chunk.css.map",
+    "static/media/logo.svg": "/lempel-ziv77/static/media/logo.5d5d9eef.svg",
+    "static/media/index.css": "/lempel-ziv77/static/media/roboto-latin-900italic.bc833e72.woff"
+  }
 }
