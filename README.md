@@ -5,5 +5,6 @@ Implementation of the LZ77 algorithm in Javascript using React
 ## Usage
 
 ```
-$ npm i && npm start
+$ npm i
+$ npm start
 ```
