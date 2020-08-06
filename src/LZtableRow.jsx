@@ -25,7 +25,9 @@ function LZtableRow (props) {
         <span className={ props.classes.buffer }>{ props.row_info.buffer }</span>
         <span>{ props.row_info.tail }</span>
       </TableCell>
-      <TableCell className={ props.className }>&lt;{ props.row_info.offset }, { props.row_info.distance }, { next_char }&gt;</TableCell>
+      <TableCell className={ props.className }>
+        &lt;{ props.row_info.offset }, { props.row_info.distance }, { next_char }&gt;
+      </TableCell>
     </TableRow>
   );
 }
