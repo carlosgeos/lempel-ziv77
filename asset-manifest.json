@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/lempel-ziv77/static/css/main.e68c6861.chunk.css",
-    "main.js": "/lempel-ziv77/static/js/main.d5da6e2f.chunk.js",
-    "main.js.map": "/lempel-ziv77/static/js/main.d5da6e2f.chunk.js.map",
-    "runtime-main.js": "/lempel-ziv77/static/js/runtime-main.09c1fca6.js",
-    "runtime-main.js.map": "/lempel-ziv77/static/js/runtime-main.09c1fca6.js.map",
-    "static/css/2.46dfc7bc.chunk.css": "/lempel-ziv77/static/css/2.46dfc7bc.chunk.css",
-    "static/js/2.dd9071be.chunk.js": "/lempel-ziv77/static/js/2.dd9071be.chunk.js",
-    "static/js/2.dd9071be.chunk.js.map": "/lempel-ziv77/static/js/2.dd9071be.chunk.js.map",
+    "main.css": "/lempel-ziv77/static/css/main.1066b281.chunk.css",
+    "main.js": "/lempel-ziv77/static/js/main.bee051de.chunk.js",
+    "main.js.map": "/lempel-ziv77/static/js/main.bee051de.chunk.js.map",
+    "runtime-main.js": "/lempel-ziv77/static/js/runtime-main.3ff19907.js",
+    "runtime-main.js.map": "/lempel-ziv77/static/js/runtime-main.3ff19907.js.map",
+    "static/css/2.003a6efa.chunk.css": "/lempel-ziv77/static/css/2.003a6efa.chunk.css",
+    "static/js/2.692e83a9.chunk.js": "/lempel-ziv77/static/js/2.692e83a9.chunk.js",
+    "static/js/2.692e83a9.chunk.js.map": "/lempel-ziv77/static/js/2.692e83a9.chunk.js.map",
     "index.html": "/lempel-ziv77/index.html",
-    "precache-manifest.d28dfdb29744d3d70f4e93dc7a3f5ad6.js": "/lempel-ziv77/precache-manifest.d28dfdb29744d3d70f4e93dc7a3f5ad6.js",
+    "precache-manifest.c8e5948642bc1d4a213e6ca9ed90c56a.js": "/lempel-ziv77/precache-manifest.c8e5948642bc1d4a213e6ca9ed90c56a.js",
     "service-worker.js": "/lempel-ziv77/service-worker.js",
-    "static/css/2.46dfc7bc.chunk.css.map": "/lempel-ziv77/static/css/2.46dfc7bc.chunk.css.map",
-    "static/css/main.e68c6861.chunk.css.map": "/lempel-ziv77/static/css/main.e68c6861.chunk.css.map",
-    "static/js/2.dd9071be.chunk.js.LICENSE": "/lempel-ziv77/static/js/2.dd9071be.chunk.js.LICENSE",
+    "static/css/2.003a6efa.chunk.css.map": "/lempel-ziv77/static/css/2.003a6efa.chunk.css.map",
+    "static/css/main.1066b281.chunk.css.map": "/lempel-ziv77/static/css/main.1066b281.chunk.css.map",
+    "static/js/2.692e83a9.chunk.js.LICENSE.txt": "/lempel-ziv77/static/js/2.692e83a9.chunk.js.LICENSE.txt",
     "static/media/logo.svg": "/lempel-ziv77/static/media/logo.5d5d9eef.svg",
     "static/media/index.css": "/lempel-ziv77/static/media/roboto-latin-900italic.ebf6d164.woff2"
   },
   "entrypoints": [
-    "static/js/runtime-main.09c1fca6.js",
-    "static/css/2.46dfc7bc.chunk.css",
-    "static/js/2.dd9071be.chunk.js",
-    "static/css/main.e68c6861.chunk.css",
-    "static/js/main.d5da6e2f.chunk.js"
+    "static/js/runtime-main.3ff19907.js",
+    "static/css/2.003a6efa.chunk.css",
+    "static/js/2.692e83a9.chunk.js",
+    "static/css/main.1066b281.chunk.css",
+    "static/js/main.bee051de.chunk.js"
   ]
 }

@@ -1,31 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e604766838ae76d886dc562e07488b12",
+    "revision": "3d18b0b34cbf09df10081e9157ca6ff6",
     "url": "/lempel-ziv77/index.html"
   },
   {
-    "revision": "bb9d45fcaaa70ea35f3e",
-    "url": "/lempel-ziv77/static/css/2.46dfc7bc.chunk.css"
+    "revision": "27ad07b1a51d1a54ba05",
+    "url": "/lempel-ziv77/static/css/2.003a6efa.chunk.css"
   },
   {
-    "revision": "f8a5c0b16b124200dac6",
-    "url": "/lempel-ziv77/static/css/main.e68c6861.chunk.css"
+    "revision": "0c2846b4ffd1d86a3a82",
+    "url": "/lempel-ziv77/static/css/main.1066b281.chunk.css"
   },
   {
-    "revision": "bb9d45fcaaa70ea35f3e",
-    "url": "/lempel-ziv77/static/js/2.dd9071be.chunk.js"
+    "revision": "27ad07b1a51d1a54ba05",
+    "url": "/lempel-ziv77/static/js/2.692e83a9.chunk.js"
   },
   {
-    "revision": "a6f9763189d4244cfd5ce145a5e507d5",
-    "url": "/lempel-ziv77/static/js/2.dd9071be.chunk.js.LICENSE"
+    "revision": "0749163b59fbee32225059cb60c18af6",
+    "url": "/lempel-ziv77/static/js/2.692e83a9.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f8a5c0b16b124200dac6",
-    "url": "/lempel-ziv77/static/js/main.d5da6e2f.chunk.js"
+    "revision": "0c2846b4ffd1d86a3a82",
+    "url": "/lempel-ziv77/static/js/main.bee051de.chunk.js"
   },
   {
-    "revision": "bf7a7f79b28593bed295",
-    "url": "/lempel-ziv77/static/js/runtime-main.09c1fca6.js"
+    "revision": "f93797f0be71ad1deed2",
+    "url": "/lempel-ziv77/static/js/runtime-main.3ff19907.js"
   },
   {
     "revision": "5d5d9eefa31e5e13a6610d9fa7a283bb",

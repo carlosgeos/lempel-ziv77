@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/lempel-ziv77/precache-manifest.d28dfdb29744d3d70f4e93dc7a3f5ad6.js"
+  "/lempel-ziv77/precache-manifest.c8e5948642bc1d4a213e6ca9ed90c56a.js"
 );
 
 self.addEventListener('message', (event) => {
